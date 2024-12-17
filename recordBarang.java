@@ -4,7 +4,7 @@ public class recordBarang {
     int iIdBarang, iHarga, iJumlahStok;
     String sNamaBarang, sMerek, sKategori, sTanggalKadaluarsa;
 
-    public recordBarang(int iIdBarang, int iHarga, int iJumlahStok, String sNamaBarang, String sMerek, String sKategori,
+    public recordBarang(int iIdBarang, String sNamaBarang, String sMerek, String sKategori, int iHarga, int iJumlahStok,
             String sTanggalKadaluarsa) {
         this.iIdBarang = iIdBarang;
         this.sNamaBarang = sNamaBarang;
