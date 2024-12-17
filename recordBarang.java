@@ -1,17 +1,22 @@
-package tubes2024_alpro2;
+import java.util.Scanner;
 
 public class recordBarang {
-    int iIdBarang, iHarga, iJumlahStok;
+    int iIdBarang, iJumlahStok;
+    double dHarga;
     String sNamaBarang, sMerek, sKategori, sTanggalKadaluarsa;
 
-    public recordBarang(int iIdBarang, String sNamaBarang, String sMerek, String sKategori, int iHarga, int iJumlahStok,
-            String sTanggalKadaluarsa) {
+    recordBarang() {
+
+    }
+
+    public recordBarang(int iIdBarang, String sNamaBarang, String sMerek, String sKategori, double dHarga,
+            int iJumlahStok, String sTanggalKadaluarsa) {
         this.iIdBarang = iIdBarang;
+        this.iJumlahStok = iJumlahStok;
+        this.dHarga = dHarga;
         this.sNamaBarang = sNamaBarang;
         this.sMerek = sMerek;
         this.sKategori = sKategori;
-        this.iHarga = iHarga;
-        this.iJumlahStok = iJumlahStok;
         this.sTanggalKadaluarsa = sTanggalKadaluarsa;
     }
 
@@ -23,20 +28,20 @@ public class recordBarang {
         this.iIdBarang = iIdBarang;
     }
 
-    public int getiHarga() {
-        return iHarga;
-    }
-
-    public void setiHarga(int iHarga) {
-        this.iHarga = iHarga;
-    }
-
     public int getiJumlahStok() {
         return iJumlahStok;
     }
 
     public void setiJumlahStok(int iJumlahStok) {
         this.iJumlahStok = iJumlahStok;
+    }
+
+    public double getdHarga() {
+        return dHarga;
+    }
+
+    public void setdHarga(double dHarga) {
+        this.dHarga = dHarga;
     }
 
     public String getsNamaBarang() {
@@ -71,4 +76,32 @@ public class recordBarang {
         this.sTanggalKadaluarsa = sTanggalKadaluarsa;
     }
 
+    public void inputBarang() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("id barang: ");
+        iIdBarang = sc.nextInt();
+        System.out.print("Nama barang: ");
+        sNamaBarang = sc.next();
+        System.out.print("Merek barang: ");
+        sMerek = sc.next();
+        System.out.print("Kategori barang: ");
+        sKategori = sc.next();
+        System.out.print("Harga barang: ");
+        dHarga = sc.nextDouble();
+        System.out.print("Jumlah barang di stok: ");
+        iJumlahStok = sc.nextInt();
+        System.out.print("Tanggal barang kadaluarsa: ");
+        sTanggalKadaluarsa = sc.next();
+    }
+
+    public void tampilBarang() {
+        System.out.println("id:" + iIdBarang + ", Nama:" + sNamaBarang + ", Merek" + sMerek + ", Kategori:" + sKategori
+                + ", Harga:" + dHarga + ", Stok:" + iJumlahStok + ", TanggalKadaluarsa:" + sTanggalKadaluarsa);
+    }
+
+    public static void main(String[] args) {
+        recordBarang A = new recordBarang();
+        A.inputBarang();
+        A.tampilBarang();
+    }
 }
