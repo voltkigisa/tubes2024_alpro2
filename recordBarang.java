@@ -1,6 +1,6 @@
-package TUBES;
+package tubes2024_alpro2;
 
-public class Barang {
+public class recordBarang {
     int iIdBarang, iHarga, iJumlahStok;
     String sNamaBarang, sMerek, sKategori, sTanggalKadaluarsa;
 
