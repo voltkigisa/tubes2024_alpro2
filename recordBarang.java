@@ -7,11 +7,11 @@ public class recordBarang {
     public recordBarang(int iIdBarang, int iHarga, int iJumlahStok, String sNamaBarang, String sMerek, String sKategori,
             String sTanggalKadaluarsa) {
         this.iIdBarang = iIdBarang;
-        this.iHarga = iHarga;
-        this.iJumlahStok = iJumlahStok;
         this.sNamaBarang = sNamaBarang;
         this.sMerek = sMerek;
         this.sKategori = sKategori;
+        this.iHarga = iHarga;
+        this.iJumlahStok = iJumlahStok;
         this.sTanggalKadaluarsa = sTanggalKadaluarsa;
     }
 
