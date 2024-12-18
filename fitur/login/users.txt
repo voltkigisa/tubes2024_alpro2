@@ -1,0 +1,3 @@
+admin,admin123
+kasir1,password123
+manager,password456
