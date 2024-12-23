@@ -92,6 +92,7 @@ public class recordBarang {
         iJumlahStok = sc.nextInt();
         System.out.print("Tanggal barang kadaluarsa: ");
         sTanggalKadaluarsa = sc.next();
+        sc.close();
     }
 
     public void tampilBarang() {
