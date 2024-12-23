@@ -15,7 +15,7 @@ public class login {
                 if (prosesBaris(line, usernameInput, passwordInput)) {
                     return true; // Login berhasil  
                 }
-            }
+            } 
         } catch (IOException e) {
             System.out.println("Error I/O saat membaca file: " + e.getMessage());
         }
