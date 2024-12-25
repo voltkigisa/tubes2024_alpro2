@@ -75,34 +75,4 @@ public class recordBarang {
     public void setsTanggalKadaluarsa(String sTanggalKadaluarsa) {
         this.sTanggalKadaluarsa = sTanggalKadaluarsa;
     }
-
-    public void inputBarang() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("id barang: ");
-        iIdBarang = sc.nextInt();
-        System.out.print("Nama barang: ");
-        sNamaBarang = sc.next();
-        System.out.print("Merek barang: ");
-        sMerek = sc.next();
-        System.out.print("Kategori barang: ");
-        sKategori = sc.next();
-        System.out.print("Harga barang: ");
-        dHarga = sc.nextDouble();
-        System.out.print("Jumlah barang di stok: ");
-        iJumlahStok = sc.nextInt();
-        System.out.print("Tanggal barang kadaluarsa: ");
-        sTanggalKadaluarsa = sc.next();
-        sc.close();
-    }
-
-    public void tampilBarang() {
-        System.out.println("id:" + iIdBarang + ", Nama:" + sNamaBarang + ", Merek" + sMerek + ", Kategori:" + sKategori
-                + ", Harga:" + dHarga + ", Stok:" + iJumlahStok + ", TanggalKadaluarsa:" + sTanggalKadaluarsa);
-    }
-
-    public static void main(String[] args) {
-        recordBarang A = new recordBarang();
-        A.inputBarang();
-        A.tampilBarang();
-    }
 }
