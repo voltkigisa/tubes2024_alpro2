@@ -18,7 +18,7 @@ public class Main {
                 System.out.print("Coba lagi? (y/n): ");
                 String retry = input.nextLine();
                 if (retry.equalsIgnoreCase("n")) {
-                    System.out.println("Program selesai. Terima kasih!");
+                    System.out.println("login berhasil. Terima kasih!");
                     return; // Keluar dari program
                 }
             }
