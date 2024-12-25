@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-import record.recordBarang;
+import record.recordBarang; 
 
 public class ubah {
      // Fungsi utama untuk mengubah data barang
