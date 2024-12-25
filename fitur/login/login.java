@@ -6,14 +6,15 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class login {
-    
+
     // Fungsi untuk membaca file dan memeriksa username dan password
     static public boolean bacaFile(String usernameInput, String passwordInput) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Lenov\\Documents\\Kuliah Unpas\\semester3\\Alpro II\\tubes2024_alpro2\\fitur\\login\\users.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(
+                "C:\\Users\\Lenov\\Documents\\Kuliah Unpas\\semester3\\Alpro II\\tubes2024_alpro2\\fitur\\login\\users.txt"))) {
             String line;
             while ((line = br.readLine()) != null) { // Membaca file baris per baris
                 if (prosesBaris(line, usernameInput, passwordInput)) {
-                    return true; // Login berhasil  
+                    return true; // Login berhasil
                 }
             }
         } catch (IOException e) {

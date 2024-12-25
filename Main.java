@@ -2,10 +2,15 @@ import java.util.Scanner;
 import fitur.login.login;
 
 public class Main {
+    public static Scanner input = new Scanner(System.in);
+    public static boolean isLoggedIn = false;
+
+    public static void logout() {
+        isLoggedIn = false;
+        System.out.println("Anda berhasil logout.");
+    }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        boolean isLoggedIn = false;
 
         // Proses Login
         do {
