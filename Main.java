@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import fitur.login.login;
 import fitur.ubah.ubah;
+import fitur.hapus.hapus;
 
 public class Main {
 
@@ -31,6 +32,7 @@ public class Main {
            while (isRunning) {
                System.out.println("\n=== Main Menu ===");
                System.out.println("1. Ubah Data Barang");
+               System.out.println("2. Hapus Data Barang");
                System.out.print("Pilih menu (1): ");
    
                int choice = sc.nextInt();
@@ -49,6 +51,11 @@ public class Main {
                        break;
                    default:
                        System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                   case 2:
+                    // Jalankan fitur hapus
+                        int idBarang = hapus.mintaIdBarang();
+                        boolean berhasil = hapus.hapusData(idBarang);
+                        hapus.tampilHasil(berhasil);
                }
            }
            sc.close();
