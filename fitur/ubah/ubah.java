@@ -108,7 +108,6 @@ public class ubah {
                 System.out.println("Gagal mengganti file sementara.");
                 return false;
             }
-            System.out.println("Data barang berhasil diubah.");
         } else {
             System.out.println("Data dengan ID " + idBarang + " tidak ditemukan.");
         }
