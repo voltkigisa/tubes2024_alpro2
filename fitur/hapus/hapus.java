@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 import record.recordBarang;
 
-public class hapus3 {
+public class hapus {
     // Prosedur untuk meminta idBarang yang akan dihapus
     public static int mintaIdBarang() {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class hapus3 {
         int idBarang = scanner.nextInt();
         return idBarang;
     }
-    
+
     // Prosedur untuk menghapus data
     public static boolean hapusData(int idBarang) {
         File barang = new File("barang.txt");
