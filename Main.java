@@ -4,6 +4,7 @@ import fitur.ubah.ubah;
 import fitur.hapus.hapus;
 import fitur.tambah.tambah;
 import fitur.tampil.tampil;
+import fitur.tampil.tampil;
 
 
 public class Main {
@@ -81,6 +82,7 @@ public class Main {
                         int idBarang = hapus.mintaIdBarang();
                         boolean berhasil = hapus.hapusData(idBarang);
                         hapus.tampilHasil(berhasil);
+                        break;
                         break;
                      case 3:
                     // Jalankan fitur tambah
