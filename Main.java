@@ -4,7 +4,6 @@ import fitur.ubah.ubah;
 import fitur.hapus.hapus;
 import fitur.tambah.tambah;
 import fitur.tampil.tampil;
-import fitut.tampil.tampil;
 
 
 public class Main {
@@ -14,11 +13,11 @@ public class Main {
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline
-                if (choice >= 1 && choice <= 3) {
+                if (choice >= 1 && choice <= 4) {
                     return choice;
                 } else {
                     System.out.println("Pilihan tidak valid. Masukkan angka 1-3.");
-                    System.out.print("Pilih menu (1-3): ");
+                    System.out.print("Pilih menu (1-4): ");
                 }
             } else {
                 System.out.println("Input harus berupa angka. Silakan coba lagi.");
@@ -61,14 +60,9 @@ public class Main {
                System.out.println("1. Ubah Data Barang");
                System.out.println("2. Hapus Data Barang");
                System.out.println("3. Tambah Data Barang");
-               System.out.print("Pilih menu (1-3): ");
-               int choice = readMenuChoice(sc);   
                System.out.println("4. Tampil Data Barang");
-               System.out.print("Pilih menu (1): ");
-   
-               int choice = sc.nextInt();
-               sc.nextLine(); // Membersihkan newline setelah sc angka
-   
+               System.out.print("Pilih menu (1-4): ");
+               int choice = readMenuChoice(sc);   
                switch (choice) {
                    case 1:
                        // Jalankan fitur ubah
