@@ -26,7 +26,7 @@ public class tambah {
     }
 
     public static void tambahData() {
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
             // Input data barang
             int id = readInt(scanner, "Masukkan ID Barang: ");
             System.out.print("Masukkan Nama Barang: ");
@@ -53,13 +53,10 @@ public class tambah {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
                 writer.newLine(); // Tambahkan baris baru
                 writer.write(newBarang);
+            }catch (IOException e) {
+                System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
             }
 
             System.out.println("Barang berhasil ditambahkan!");
-        } catch (IOException e) {
-            System.err.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
-        } catch (Exception e) {
-            System.err.println("Terjadi kesalahan: " + e.getMessage());
-        }
     }
 }
