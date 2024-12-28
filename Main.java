@@ -63,9 +63,13 @@ public class Main {
                     // Jalankan fitur tambah
                 	   System.out.println("=== Fitur Tambah Data Barang ===");   
                 	   tambah.tambahData();
-                    }
-               }
-           }
+                    case 4:
+                         // Jalankan fitur tampil data
+                         System.out.println("4. Tampil Data Barang");
+                         tampil.tampilkanData();
+                         break;
+                 }
+             }
            sc.close();
     }
 }
