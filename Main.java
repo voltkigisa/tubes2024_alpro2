@@ -3,10 +3,34 @@ import fitur.login.login;
 import fitur.ubah.ubah;
 import fitur.hapus.hapus;
 import fitur.tambah.tambah;
+import fitur.tampil.tampil;
 import fitut.tampil.tampil;
 
 
 public class Main {
+    private static int readMenuChoice(Scanner scanner) {
+        int choice;
+        while (true) {
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                if (choice >= 1 && choice <= 3) {
+                    return choice;
+                } else {
+                    System.out.println("Pilihan tidak valid. Masukkan angka 1-3.");
+                    System.out.print("Pilih menu (1-3): ");
+                }
+            } else {
+                System.out.println("Input harus berupa angka. Silakan coba lagi.");
+                if (scanner.hasNextLine()) {
+                    scanner.nextLine(); // Clear invalid input
+                } else {
+                    break; // Tidak ada lagi input, keluar loop
+                }
+            }
+        }
+        throw new IllegalStateException("Tidak ada input valid yang tersedia.");
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -37,6 +61,8 @@ public class Main {
                System.out.println("1. Ubah Data Barang");
                System.out.println("2. Hapus Data Barang");
                System.out.println("3. Tambah Data Barang");
+               System.out.print("Pilih menu (1-3): ");
+               int choice = readMenuChoice(sc);   
                System.out.println("4. Tampil Data Barang");
                System.out.print("Pilih menu (1): ");
    
@@ -61,6 +87,7 @@ public class Main {
                         int idBarang = hapus.mintaIdBarang();
                         boolean berhasil = hapus.hapusData(idBarang);
                         hapus.tampilHasil(berhasil);
+                        break;
                      case 3:
                     // Jalankan fitur tambah
                 	   System.out.println("=== Fitur Tambah Data Barang ===");   

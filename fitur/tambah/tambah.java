@@ -3,21 +3,32 @@ package fitur.tambah;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
- 
+
 public class tambah {
 
     private static final String FILE_PATH = "barang.txt";
 
+    private static int readInt(Scanner scanner, String prompt) {
+        int value;
+        while (true) {
+            System.out.print(prompt);
+            if (scanner.hasNextInt()) {
+                value = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                break;
+            } else {
+                System.out.println("Input harus berupa angka. Silakan coba lagi.");
+                scanner.nextLine(); // Clear invalid input
+            }
+        }
+        return value;
+    }
+
     public static void tambahData() {
         try (Scanner scanner = new Scanner(System.in)) {
-            
             // Input data barang
-            System.out.print("Masukkan ID Barang: ");
-            int id = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
+            int id = readInt(scanner, "Masukkan ID Barang: ");
             System.out.print("Masukkan Nama Barang: ");
             String nama = scanner.nextLine();
 
@@ -27,13 +38,8 @@ public class tambah {
             System.out.print("Masukkan Kategori Barang: ");
             String kategori = scanner.nextLine();
 
-            System.out.print("Masukkan Harga Barang: ");
-            int harga = scanner.nextInt();
-
-            System.out.print("Masukkan Stok Barang: ");
-            int stok = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
+            int harga = readInt(scanner, "Masukkan Harga Barang: ");
+            int stok = readInt(scanner, "Masukkan Stok Barang: ");
             System.out.print("Masukkan Tanggal Kadaluarsa (YYYY-MM-DD): ");
             String tanggalKadaluarsa = scanner.nextLine();
 
@@ -49,12 +55,11 @@ public class tambah {
                 writer.write(newBarang);
             }
 
-            // menampilkan hasilnya
             System.out.println("Barang berhasil ditambahkan!");
         } catch (IOException e) {
             System.err.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
         } catch (Exception e) {
-            System.err.println("Input tidak valid: " + e.getMessage());
+            System.err.println("Terjadi kesalahan: " + e.getMessage());
         }
     }
 }
