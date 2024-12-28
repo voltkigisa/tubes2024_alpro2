@@ -4,7 +4,6 @@ import fitur.ubah.ubah;
 import fitur.hapus.hapus;
 import fitur.tambah.tambah;
 import fitur.tampil.tampil;
-import fitur.tampil.tampil;
 
 
 public class Main {
@@ -83,11 +82,11 @@ public class Main {
                         boolean berhasil = hapus.hapusData(idBarang);
                         hapus.tampilHasil(berhasil);
                         break;
-                        break;
                      case 3:
                     // Jalankan fitur tambah
                 	   System.out.println("=== Fitur Tambah Data Barang ===");   
                 	   tambah.tambahData();
+                       break;
                     case 4:
                          // Jalankan fitur tampil data
                          System.out.println("4. Tampil Data Barang");
