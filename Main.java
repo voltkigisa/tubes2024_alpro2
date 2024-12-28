@@ -36,6 +36,7 @@ public class Main {
                System.out.println("1. Ubah Data Barang");
                System.out.println("2. Hapus Data Barang");
                System.out.println("3. Tambah Data Barang");
+               System.out.println("4. Tampil Data Barang");
                System.out.print("Pilih menu (1): ");
    
                int choice = sc.nextInt();
