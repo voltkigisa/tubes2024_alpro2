@@ -2,6 +2,8 @@ import java.util.Scanner;
 import fitur.login.login;
 import fitur.ubah.ubah;
 import fitur.hapus.hapus;
+import fitur.tambah.tambah;
+
 
 public class Main {
 
@@ -33,6 +35,7 @@ public class Main {
                System.out.println("\n=== Main Menu ===");
                System.out.println("1. Ubah Data Barang");
                System.out.println("2. Hapus Data Barang");
+               System.out.println("3. Tambah Data Barang");
                System.out.print("Pilih menu (1): ");
    
                int choice = sc.nextInt();
@@ -56,6 +59,11 @@ public class Main {
                         int idBarang = hapus.mintaIdBarang();
                         boolean berhasil = hapus.hapusData(idBarang);
                         hapus.tampilHasil(berhasil);
+                     case 3:
+                    // Jalankan fitur tambah
+                	   System.out.println("=== Fitur Tambah Data Barang ===");   
+                	   tambah.tambahData();
+                    }
                }
            }
            sc.close();
