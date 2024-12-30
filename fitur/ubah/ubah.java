@@ -7,10 +7,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-import record.recordBarang; 
+import record.recordBarang;
 
 public class ubah {
-     // Fungsi utama untuk mengubah data barang
+    // Fungsi utama untuk mengubah data barang
     public static boolean ubahBarang() {
         Scanner sc = new Scanner(System.in);
 
@@ -33,7 +33,7 @@ public class ubah {
         System.out.print("Masukkan kategori baru: ");
         String kategoriBaru = sc.nextLine();
 
-        System.out.print("Masukkan harga baru: ");
+        System.out.print("Masukkan harga baru(Rp): ");
         int hargaBaru;
         try {
             hargaBaru = Integer.parseInt(sc.nextLine());
@@ -42,7 +42,7 @@ public class ubah {
             return false;
         }
 
-        System.out.print("Masukkan stok baru: ");
+        System.out.print("Masukkan stok baru(pcs): ");
         int stokBaru;
         try {
             stokBaru = Integer.parseInt(sc.nextLine());
@@ -59,13 +59,14 @@ public class ubah {
     }
 
     // Fungsi untuk membaca dan memperbarui file
-    private static boolean prosesUbah(int idBarang, String namaBaru, String merkBaru, String kategoriBaru, int hargaBaru, int stokBaru, String tanggalKadaluarsaBaru) {
+    private static boolean prosesUbah(int idBarang, String namaBaru, String merkBaru, String kategoriBaru,
+            int hargaBaru, int stokBaru, String tanggalKadaluarsaBaru) {
         File file = new File("barang.txt");
         File tempFile = new File("temp_barang.txt");
         boolean isUpdated = false;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
 
             String line;
             while ((line = br.readLine()) != null) {
