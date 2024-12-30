@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import Record.recordBarang;
+import record.recordBarang;
 
 public class tampil {
     public static void tampilkanData() {

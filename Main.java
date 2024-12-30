@@ -60,7 +60,8 @@ public class Main {
             System.out.println("1. Ubah Data Barang");
             System.out.println("2. Hapus Data Barang");
             System.out.println("3. Tambah Data Barang");
-            System.out.print("Pilih menu (1-3): ");
+            System.out.println("4. Tampil Data Barang");
+            System.out.print("Pilih menu (1-4): ");
             int choice = readMenuChoice(sc);
             switch (choice) {
                 case 1:
@@ -76,30 +77,6 @@ public class Main {
                 default:
                     System.out.println("Pilihan tidak valid. Silakan coba lagi.");
                 case 2:
-           // Main Menu
-           boolean isRunning = true;
-           while (isRunning) {
-               System.out.println("\n=== Main Menu ===");
-               System.out.println("1. Ubah Data Barang");
-               System.out.println("2. Hapus Data Barang");
-               System.out.println("3. Tambah Data Barang");
-               System.out.println("4. Tampil Data Barang");
-               System.out.print("Pilih menu (1-4): ");
-               int choice = readMenuChoice(sc);   
-               switch (choice) {
-                   case 1:
-                       // Jalankan fitur ubah
-                       System.out.println("=== Fitur Ubah Data Barang ===");
-                       boolean hasilUbah = ubah.ubahBarang();
-                       if (hasilUbah) {
-                           System.out.println("Data barang berhasil diubah!");
-                       } else {
-                           System.out.println("Proses ubah data gagal atau ID tidak ditemukan.");
-                       }
-                       break;
-                   default:
-                       System.out.println("Pilihan tidak valid. Silakan coba lagi.");
-                   case 2:
                     // Jalankan fitur hapus
                     System.out.println("\n=== Fitur Hapus Data Barang ===");
                     int idBarang = hapus.mintaIdBarang();
@@ -112,16 +89,16 @@ public class Main {
                     break;
                 case 3:
                     // Jalankan fitur tambah
-                	   System.out.println("=== Fitur Tambah Data Barang ===");   
-                	   tambah.tambahData();
-                       break;
-                    case 4:
-                         // Jalankan fitur tampil data
-                         System.out.println("4. Tampil Data Barang");
-                         tampil.tampilkanData();
-                         break;
-                 }
-             }
-           sc.close();
+                    System.out.println("=== Fitur Tambah Data Barang ===");   
+                    tambah.tambahData();
+                    break;
+                case 4:
+                    // Jalankan fitur tampil data
+                    System.out.println("4. Tampil Data Barang");
+                    tampil.tampilkanData();
+                    break;
+            }
+        }
+        sc.close();
     }
 }
