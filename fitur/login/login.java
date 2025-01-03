@@ -37,7 +37,6 @@ public class login {
         String username = sc.nextLine();
         System.out.print("Masukkan password: ");
         String password = sc.nextLine();
-        sc.close();
         // sc.close();
         // Cek login
         return bacaFile(username, password); // Baca file dan cek login

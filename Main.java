@@ -39,8 +39,8 @@ public class Main {
                 if (choice >= 0 && choice <= 4) {
                     return choice;
                 } else {
-                    System.out.println("Pilihan tidak valid. Masukkan angka 0-4.");
-                    System.out.print("Pilih menu (0-4): ");
+                    System.out.println("Pilihan tidak valid. Masukkan angka 1-4.");
+                    System.out.print("Pilih menu (1-4): ");
                 }
             } else {
                 System.out.println("Input harus berupa angka. Silakan coba lagi.");
@@ -125,8 +125,10 @@ public class Main {
     private static void saveBarang() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("barang.txt"))) {
             for (int i = 0; i < jumlahBarang; i++) {
-                bw.write(daftarBarang[i].toString());
-                bw.newLine();
+                if (daftarBarang[i] != null) {
+                    bw.write(daftarBarang[i].toString());
+                    bw.newLine();
+                }
             }
         } catch (IOException e) {
             System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
