@@ -2,6 +2,9 @@ package fitur.tambah;
 
 import java.util.Scanner;
 import record.Barang;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class tambah {
 
@@ -60,5 +63,21 @@ public class tambah {
         daftarBarang[jumlahBarang] = barang;
         jumlahBarang++;
         System.out.println("Barang berhasil ditambahkan!");
+
+        // Simpan ke file
+        saveBarang(daftarBarang, jumlahBarang);
+    }
+
+    private static void saveBarang(Barang[] daftarBarang, int jumlahBarang) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("barang.txt"))) {
+            for (int i = 0; i < jumlahBarang; i++) {
+                if (daftarBarang[i] != null) {
+                    bw.write(daftarBarang[i].toString());
+                    bw.newLine();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
+        }
     }
 }

@@ -13,19 +13,20 @@ public class Main {
     private static int jumlahBarang = 0; // Jumlah barang yang ada dalam array
 
     private static void Login() {
-        System.out.println("=== Login Admin ===");
-        if (login.loginuser()) {
-            isLoggedIn = true;
-            System.out.println("Login berhasil. Selamat datang!");
-            startAgain();
-        } else {
-            System.out.println("Login gagal! Username atau password salah.");
-            System.out.print("Coba lagi? (y/n): ");
-            String retry = sc.nextLine();
-            if (retry.equalsIgnoreCase("n")) {
-                System.out.println("Hubungi support jika perlu bantuan. Terima kasih!");
-                System.exit(0);
-                return; // Keluar dari program
+        while (!isLoggedIn) {
+            System.out.println("=== Login Admin ===");
+            if (login.loginuser()) {
+                isLoggedIn = true;
+                System.out.println("Login berhasil. Selamat datang!");
+                startAgain();
+            } else {
+                System.out.println("Login gagal! Username atau password salah.");
+                System.out.print("Coba lagi? (y/n): ");
+                String retry = sc.nextLine();
+                if (retry.equalsIgnoreCase("n")) {
+                    System.out.println("Hubungi support jika perlu bantuan. Terima kasih!");
+                    System.exit(0);
+                }
             }
         }
     }
@@ -87,7 +88,6 @@ public class Main {
                     int idBarang = hapus.mintaIdBarang();
                     boolean berhasil = hapus.hapusData(daftarBarang, jumlahBarang, idBarang);
                     hapus.tampilHasil(berhasil);
-                    saveBarang();
                     break;
                 case 3:
                     // Jalankan fitur tambah
@@ -125,10 +125,19 @@ public class Main {
     private static void saveBarang() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("barang.txt"))) {
             for (int i = 0; i < jumlahBarang; i++) {
-                if (daftarBarang[i] != null) {
-                    bw.write(daftarBarang[i].toString());
-                    bw.newLine();
-                }
+                bw.write(daftarBarang[i].toString());
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
+        }
+    }
+
+    private static void saveHapusBarang() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("barang.txt"))) {
+            for (int i = 0; i < jumlahBarang; i++) {
+                bw.write(daftarBarang[i].toString());
+                bw.newLine();
             }
         } catch (IOException e) {
             System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
