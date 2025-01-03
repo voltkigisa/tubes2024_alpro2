@@ -1,16 +1,15 @@
 package record;
-import java.util.Scanner;
 
-public class recordBarang {
+public class Barang {
     int iIdBarang, iJumlahStok;
     double dHarga;
     String sNamaBarang, sMerek, sKategori, sTanggalKadaluarsa;
 
-    recordBarang() {
+    Barang() {
 
     }
 
-    public recordBarang(int iIdBarang, String sNamaBarang, String sMerek, String sKategori, double dHarga,
+    public Barang(int iIdBarang, String sNamaBarang, String sMerek, String sKategori, double dHarga,
             int iJumlahStok, String sTanggalKadaluarsa) {
         this.iIdBarang = iIdBarang;
         this.iJumlahStok = iJumlahStok;
@@ -77,8 +76,8 @@ public class recordBarang {
         this.sTanggalKadaluarsa = sTanggalKadaluarsa;
     }
 
-     // Method untuk parsing dari string
-    public static recordBarang fromString(String line) {
+    // Method untuk parsing dari string
+    public static Barang fromString(String line) {
         String[] parts = line.split(",");
         if (parts.length != 7) {
             throw new IllegalArgumentException("Format data tidak valid");
@@ -90,12 +89,13 @@ public class recordBarang {
         double harga = Double.parseDouble(parts[4]);
         int stok = Integer.parseInt(parts[5]);
         String tanggalKadaluarsa = parts[6].replace("\"", "");
-    
-        return new recordBarang(idBarang, namaBarang, merek, kategori, harga, stok, tanggalKadaluarsa);
-    }    
+
+        return new Barang(idBarang, namaBarang, merek, kategori, harga, stok, tanggalKadaluarsa);
+    }
 
     @Override
     public String toString() {
-        return iIdBarang + ",\"" + sNamaBarang + "\",\"" + sMerek + "\",\"" + sKategori + "\"," + dHarga + "," + iJumlahStok + ",\"" + sTanggalKadaluarsa + "\"";
+        return iIdBarang + ",\"" + sNamaBarang + "\",\"" + sMerek + "\",\"" + sKategori + "\"," + dHarga + ","
+                + iJumlahStok + ",\"" + sTanggalKadaluarsa + "\"";
     }
 }

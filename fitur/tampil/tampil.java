@@ -2,11 +2,10 @@ package fitur.tampil;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader; 
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
-import record.recordBarang;
+import record.Barang;
 
 public class tampil {
     public static void tampilkanData() {
@@ -21,7 +20,7 @@ public class tampil {
             String line;
             while ((line = br.readLine()) != null) {
                 try {
-                    recordBarang barang = recordBarang.fromString(line);
+                    Barang barang = Barang.fromString(line);
                     System.out.println(barang);
                 } catch (IllegalArgumentException e) {
                     System.out.println("Data tidak valid: " + line);
