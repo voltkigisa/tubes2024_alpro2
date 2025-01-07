@@ -20,7 +20,9 @@ public class Main {
             System.out.println("Login gagal! Username atau password salah.");
             System.out.print("Coba lagi? (y/n): ");
             String retry = sc.nextLine();
-            if (retry.equalsIgnoreCase("n")) {
+            if(retry.equalsIgnoreCase("y")) {
+                Login();
+            } else if (retry.equalsIgnoreCase("n")) {
                 System.out.println("Hubungi support jika perlu bantuan. Terima kasih!");
                 System.exit(0);
                 return; // Keluar dari program
@@ -38,7 +40,7 @@ public class Main {
                     return choice;
                 } else {
                     System.out.println("Pilihan tidak valid. Masukkan angka 1-3.");
-                    System.out.print("Pilih menu (1-4): ");
+                    System.out.print("Pilih menu (0-5): ");
                 }
             } else {
                 System.out.println("Input harus berupa angka. Silakan coba lagi.");

@@ -19,4 +19,4 @@
 19,"Selai","Kraft","Makanan",15000.0,900,"2025-10-10"
 20,"Madu","Apimel","Kesehatan",25000.0,600,"2026-03-07"
 21,"Sabun Cuci Muka ","Garnier","Sanitasi",40000.0,300,"2026-01-19"
-22,"asep","asep","asep",20000,200,"2025-12-10"
+22,"Popcorn","Corn","Makanan",20000.0,300,"2025-12-1"
