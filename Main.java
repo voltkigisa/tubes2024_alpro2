@@ -10,21 +10,21 @@ public class Main {
     private static boolean isLoggedIn = false;
 
     private static void Login() {
-        while (!isLoggedIn) {
-            System.out.println("=== Login Admin ===");
-            if (login.loginuser()) {
-                isLoggedIn = true;
-                System.out.println("Login berhasil. Selamat datang!");
-                tampilMenu();
-            } else {
-                System.out.println("Login gagal! Username atau password salah.");
-                System.out.print("Coba lagi? (y/n): ");
-                String retry = sc.nextLine();
-                if (retry.equalsIgnoreCase("n")) {
-                    System.out.println("Hubungi support jika perlu bantuan. Terima kasih!");
-                    System.exit(0);
-                    return; // Keluar dari program
-                }
+        System.out.println("=== Login Admin ===");
+        if (login.loginuser()) {
+            isLoggedIn = true;
+            System.out.println("Login berhasil. Selamat datang!");
+            startAgain();
+        } else {
+            System.out.println("Login gagal! Username atau password salah.");
+            System.out.print("Coba lagi? (y/n): ");
+            String retry = sc.nextLine();
+            if(retry.equalsIgnoreCase("y")) {
+                Login();
+            } else if (retry.equalsIgnoreCase("n")) {
+                System.out.println("Hubungi support jika perlu bantuan. Terima kasih!");
+                System.exit(0);
+                return; // Keluar dari program
             }
         }
     }
@@ -35,11 +35,11 @@ public class Main {
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline
-                if (choice >= 0 && choice <= 5) {
+                if (choice >= 0 && choice <= 4) {
                     return choice;
                 } else {
-                    System.out.println("Pilihan tidak valid. Masukkan angka 1-5.");
-                    System.out.print("Pilih menu (1-5): ");
+                    System.out.println("Pilihan tidak valid. Masukkan angka 1-3.");
+                    System.out.print("Pilih menu (0-5): ");
                 }
             } else {
                 System.out.println("Input harus berupa angka. Silakan coba lagi.");
@@ -63,11 +63,11 @@ public class Main {
         System.out.println("0. Keluar");
         System.out.print("Pilih menu : ");
         int choice = readMenuChoice(sc);
-        startAgain(choice);
         return choice;
     }
 
-    private static void startAgain(int choice) {
+    private static void startAgain() {
+        int choice = tampilMenu();
         switch (choice) {
             case 1:
                 // Jalankan fitur ubah
@@ -78,33 +78,29 @@ public class Main {
                 } else {
                     System.out.println("Proses ubah data gagal atau ID tidak ditemukan.");
                 }
-                tampilMenu();
                 break;
             default:
                 System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             case 2:
-                // Jalankan fitur hapus
-                System.out.println("\n=== Fitur Hapus Data Barang ===");
-                int idBarang = hapus.mintaIdBarang();
-                // Menambahkan konfirmasi sebelum menghapus data
-                if (hapus.konfirmasiHapus(idBarang)) {
-                    boolean berhasil = hapus.hapusData(idBarang);
-                } else {
-                    System.out.println("Proses hapus data dibatalkan.");
-                }
-                tampilMenu();
-                break;
+              // Jalankan fitur hapus
+              System.out.println("\n=== Fitur Hapus Data Barang ===");
+              int idBarang = hapus.mintaIdBarang();
+              // Menambahkan konfirmasi sebelum menghapus data
+              if (hapus.konfirmasiHapus(idBarang)) {
+                  boolean berhasil = hapus.hapusData(idBarang);
+              } else {
+                  System.out.println("Proses hapus data dibatalkan.");
+              }
+              break;
             case 3:
                 // Jalankan fitur tambah
                 System.out.println("=== Fitur Tambah Data Barang ===");
                 tambah.tambahData();
-                tampilMenu();
                 break;
             case 4:
                 // Jalankan fitur tampil data
                 System.out.println("4. Tampil Data Barang");
                 tampil.tampilkanData();
-                tampilMenu();
                 break;
             case 5:
                 System.out.println("Logout berhasil. Sampai jumpa!");
