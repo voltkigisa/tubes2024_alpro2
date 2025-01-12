@@ -39,7 +39,7 @@ public class Main {
                     return choice;
                 } else {
                     System.out.println("Pilihan tidak valid. Masukkan angka 1-5.");
-                    System.out.print("Pilih menu (1-5): ");
+                    System.out.print("Pilih menu (0-5): ");
                 }
             } else {
                 System.out.println("Input harus berupa angka. Silakan coba lagi.");

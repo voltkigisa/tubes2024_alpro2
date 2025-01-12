@@ -9,6 +9,7 @@ import java.util.Scanner;
 import record.recordBarang;
 
 public class tampil {
+    Scanner sc = new Scanner(System.in);
     public static void tampilkanData() {
         // Misalnya membaca data barang dari file
         File file = new File("barang.txt");
