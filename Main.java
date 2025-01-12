@@ -5,7 +5,6 @@ import fitur.hapus.hapus;
 import fitur.tambah.tambah;
 import fitur.tampil.tampil;
 
-
 public class Main {
     private static Scanner sc = new Scanner(System.in);
     private static boolean isLoggedIn = false;
