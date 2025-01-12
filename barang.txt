@@ -18,5 +18,5 @@
 18,"Kecap Manis","ABC","Makanan",9000.0,1000,"2025-11-23"
 19,"Selai","Kraft","Makanan",15000.0,900,"2025-10-10"
 20,"Madu","Apimel","Kesehatan",25000.0,600,"2026-03-07"
-21,"Sabun Cuci Muka ","Garnier","Sanitasi",40000.0,300,"2026-01-19"
+21,"Sabun Cuci Muka","Himalaya","Sanitasi",40000.0,300,"2026-06-01"
 22,"hgj","hj","hgf",56.0,7,"gfd"
